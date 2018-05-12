@@ -1,15 +1,18 @@
 <template>
   <div>
     <app-hero></app-hero>
+    <app-pages></app-pages>
   </div>
 </template>
 
 <script>
 import Hero from './Hero'
+import Pages from './Pages'
 export default {
   name: 'Home',
   components: {
-    appHero: Hero
+    appHero: Hero,
+    appPages: Pages
   }
 }
 </script>
