@@ -4,7 +4,7 @@
       <h1 class="title has-text-centered">
         Recent Pages
       </h1>
-      <div class="columns is-multiline">
+      <div class="columns is-multiline" v-if="getPages.length>=1">
         <div class="column is-half" v-for="page in getPages" :key="page.id">
           <div class="card">
            <header class="card-header">
@@ -17,7 +17,7 @@
               <icon name="user"></icon> Exported by:  <strong>{{ page.created_by }}</strong>
               <br>
            
-                <icon name="clock" scale="1"></icon>  {{ page.created_at }}
+                <icon name="clock" class="clock"></icon>  {{ page.created_at | formatDateFromNow}}
               
             </div>
           </div>
@@ -32,6 +32,13 @@
             </a>
           </footer>
         </div>
+      </div>
+    </div>
+    <div class="has-text-centered" v-else>
+      
+      <div class="box empty-state">
+        <icon name="times-circle" scale="7"></icon>
+        <div>you dont have any page yet</div>
       </div>
     </div>
   </div>
@@ -55,5 +62,11 @@ export default {
 }
 .title {
   margin-top: 50px;
+}
+.clock{
+  margin-top: 9px;
+}
+.empty-state{
+  color: rgb(184, 180, 180);
 }
 </style>

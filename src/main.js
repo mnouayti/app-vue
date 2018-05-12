@@ -6,10 +6,14 @@ import router from './router'
 import {store} from './store/store.js'
 import 'vue-awesome/icons'
 import Icon from 'vue-awesome/components/Icon'
+import * as filters from './utilities/filters'
 Vue.component('icon', Icon)
 
 Vue.config.productionTip = false
 
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

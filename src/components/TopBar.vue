@@ -2,12 +2,10 @@
     <div>
         <nav class="nav has-shadow">
         <div class="container">
-            <div class="nav-left">
+            <div class="nav-center">
             <router-link to="/" class="nav-item">
-                Awesome JS SSR Blog!
+                <img src="../assets/logo.png" alt="logo">
             </router-link>
-            <router-link active-class="is-active" to="/" class="nav-item is-tab" exact>Home</router-link>
-            <router-link active-class="is-active" to="/about" class="nav-item is-tab" exact>About</router-link>
             </div>
         </div>
         </nav>
