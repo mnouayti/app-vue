@@ -40,37 +40,30 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-    data() {
-        return {
-            pages: [
-                {
-                "created_at":	"2018-05-11T18:58:11.575024+00:00",
-                "created_by":	"ali",
-                "html":	"hhh",
-                "id":	"7c027b164e56e0cc3c5c672fb048903a",
-                "title":	"bla bla bla bal",
-                "url":	"http://azbzdz.fre",
-                },
-                {
-                "created_at": "2018-05-11T18:58:13.865587+00:00",
-                "created_by": "med",
-                "html": "hhh",
-                "id": "c126a51307aa6bade23f1f4628b79fd2",
-                "title": "bonjour tous le mode",
-                "url": "http://sazbzdz.fre"
-                },
-                {
-                "created_at": "2018-05-11T18:58:16.998635+00:00",
-                "created_by": "med",
-                "html": "hhh",
-                "id": "d2f8d0469e1f091960a70df1b06ab813",
-                "title": "enfin hello world",
-                "url": "http://sazbzsdz.fre"
-                }
-            ]
+  data() {
+    return {
+      pages: []
+    }
+  },
+  methods: {
+    getPages() {
+    axios.defaults.baseURL = 'http://0.0.0.0:5000/api/'
+    axios.get('/pages')
+      .then(res => {
+        const data = res.data.data
+        for (let key in data) {
+          const page = data[key]
+          this.pages.push(page)
         }
-     }
+        console.log(this.pages)
+      })
+  }
+  },
+  created() {
+    this.getPages()
+  }
 }
 </script>
 
