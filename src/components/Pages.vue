@@ -23,14 +23,14 @@
             </div>
           </div>
           <footer class="card-footer">
-            <router-link :to="`post/${page.id}`" 
+            <router-link :to="`page/${page.id}`" 
               class="card-footer-item" append>
               View 
             </router-link>
-            <router-link :to="`post/${page.id}`" 
+            <a :href="page.url" 
               class="card-footer-item" append>
               Visit 
-            </router-link>
+            </a>
           </footer>
         </div>
       </div>
