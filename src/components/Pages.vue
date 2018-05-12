@@ -2,7 +2,7 @@
    <section class="main-content">
     <div class="container">
       <h1 class="title has-text-centered">
-        Recent Pages.
+        Recent Pages
       </h1>
       <div class="columns is-multiline">
         <div class="column is-half" v-for="page in getPages" :key="page.id">
@@ -14,22 +14,21 @@
           </header>
           <div class="card-content">
             <div class="content">
-              {{ page.created_by }}
+              <icon name="user"></icon> Exported by:  <strong>{{ page.created_by }}</strong>
               <br>
-              <small>
-                by <strong>{{ page.created_by}}</strong> 
-                \\ {{ page.created_at }}
-              </small>
+           
+                <icon name="clock" scale="1"></icon>  {{ page.created_at }}
+              
             </div>
           </div>
           <footer class="card-footer">
             <router-link :to="`page/${page.id}`" 
               class="card-footer-item" append>
-              View 
+             <icon name="eye" class="icon"></icon> View 
             </router-link>
             <a :href="page.url" 
               class="card-footer-item" append>
-              Visit 
+              <icon name="link" class="icon"></icon> Visit 
             </a>
           </footer>
         </div>
@@ -50,3 +49,11 @@ export default {
   }
 }
 </script>
+<style scoped>
+.icon{
+  margin-right: 10px;
+}
+.title {
+  margin-top: 50px;
+}
+</style>
