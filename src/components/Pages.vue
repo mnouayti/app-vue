@@ -5,7 +5,7 @@
         Recent Pages.
       </h1>
       <div class="columns is-multiline">
-        <div class="column is-half" v-for="page in pages" :key="page.id">
+        <div class="column is-half" v-for="page in getPages" :key="page.id">
           <div class="card">
            <header class="card-header">
             <p class="card-header-title">
@@ -40,30 +40,13 @@
 </template>
 
 <script>
-import axios from 'axios'
+import { mapGetters } from 'vuex'
 export default {
-  data() {
-    return {
-      pages: []
-    }
-  },
-  methods: {
-    getPages() {
-    axios.defaults.baseURL = 'http://0.0.0.0:5000/api/'
-    axios.get('/pages')
-      .then(res => {
-        const data = res.data.data
-        for (let key in data) {
-          const page = data[key]
-          this.pages.push(page)
-        }
-        console.log(this.pages)
-      })
-  }
-  },
-  created() {
-    this.getPages()
+  computed: {
+    ...mapGetters([
+      'getPages'
+    ]
+    )
   }
 }
 </script>
-
