@@ -16,12 +16,10 @@ export default {
   methods: {
     ...mapActions([
       'fetchPages',
-      'fetchSinglePage'
     ])
   },
   created() {
     this.fetchPages()
-    this.fetchSinglePage('550e44eded7b940f24c6e60354355687')
   }
 }
 </script>

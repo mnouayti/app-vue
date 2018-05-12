@@ -22,3 +22,9 @@ export default {
   }
 }
 </script>
+<style scoped>
+.page{
+  max-width:500px;
+  max-height: 500px;
+}
+</style>
