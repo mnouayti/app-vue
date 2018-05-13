@@ -1,6 +1,9 @@
 # app-vuejs
 
-> vuejs app to display exported pages
+> vuejs app to display exported pages built with Vuejs, vuex, wepack, es6..
+
+## Demo 
+![Alt Text](https://github.com/mnouayti/app-vue/blob/master/app-demo.gif)
 
 ## Build Setup
 
